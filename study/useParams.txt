@@ -1,0 +1,8 @@
+1. useParams() 는 react-route-dom에서 지원하는 함수
+2. 내가 얻고싶은 value를 받아올 수 있음 how?
+ex)
+<Route path='/movie/:id'>
+  <Detail />
+</Route>
+위의 코드에서 :가 없다면 just text, :가 있다면 변수
+그후에 Detail 컴포넌트에 useParams() 사용하면 위에서 지정한 변수(:id)가 값을 넘겨줌 
