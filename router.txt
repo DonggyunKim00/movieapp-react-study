@@ -1,0 +1,6 @@
+router-react-dom이란? -> 컴포넌트들의 모음집 ex)Router, Switch, Route...
+
+components
+1. Router -> 유저가있는 url에 따라 유저에게 보여주고싶은 것들 렌더링
+2. Switch -> 한번에 하나의 Route만 렌더링 하기위함
+3. Route -> path 지정 후 그 path에 보여주고싶은 components를 Route안에 넣고 렌더링
