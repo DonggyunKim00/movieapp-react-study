@@ -1,0 +1,52 @@
+자바스크립트 비동기 처리(Asynchronous) : 동기적 처리와는 별개로 돌아가는 처리방법
+-> 외부에서 데이터를 가지고올 때 많이 사용함
+
+1. callback function
+함수가 다른 함수에 의해서 호출되는것
+timer(1000, fucntion(){
+  console.log("작업");
+  timer(1000, fucntion(){
+    console.log("작업");
+    timer(1000, fucntion(){
+      console.log("작업");
+    });
+  });
+});
+
+2. Promise(then, catch)
+fetch()는 비동기적 처리 함수이므로 Promise 객체를 반환함
+Promise 객체는 
+성공했을때 then() 호출 -> 이는 response 객체 호출, Promise 호출
+                    -> response.json() 를 통해서 json타입의 파일을 js형식으로 바꿔서 데이터를 받을 수 있음
+실패했을때 catch() 호출 -> 이는 에러를 호출, Promise 호출
+위의 과정 반복
+timer(1000)
+  .then(fucntion(){
+    console.log("작업");
+    return timer(1000);
+  })
+  .then(fucntion(){
+    console.log("작업");
+    return timer(1000);
+  })
+  .then(fucntion(){
+    console.log("작업");
+    return timer(1000);
+  })
+
+
+3. async & await
+비동기적인 함수 앞에 await 작성
+await가 붙어있는 Promise를 return 하는 함수는 다른 async함수에서 실행되어야함
+async가 붙어있는 함수는 자동으로 Promise를 return한다(then() 사용가능)
+* 참고: https://www.youtube.com/watch?v=1z5bU-CTVsQ&list=PLuHgQVnccGMBVQ4ZcIRmcOeu8uktUAbxI&index=3
+
+async function run(){
+  await timer(1000)
+    console.log("작업");
+  await timer(1000)
+    console.log("작업");
+  await timer(1000)
+    console.log("작업");
+}
+run();

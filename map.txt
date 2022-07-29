@@ -1,0 +1,4 @@
+map() 을 사용할때 고유의 key가 필요하므로 ,map()에 의해서 return받는 element는 고유의 key 를 가져야함 
+ex)
+[1,2,3,4,5,6].map(x => x*2)
+여기서의 x는 array의 item에 해당함
