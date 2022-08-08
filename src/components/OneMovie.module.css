@@ -1,17 +1,10 @@
-* {
-  box-sizing: border-box;
-}
-
 div.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
   padding-top: 70px;
 }
 
 .movie {
   height: 450px;
-  width: 100%;
+  width: 800px;
   background-color: white;
   margin-bottom: 70px;
   font-weight: 300;
@@ -58,6 +51,10 @@ div.container {
 .movieyear {
   margin-right: 10px;
   font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 p {
